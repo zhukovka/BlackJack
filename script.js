@@ -34,13 +34,53 @@ var Deck = {
 
 var Game = {
 	start: function() {
-		this.players = [Player];
+		this.players = [Vasia, Petia];
 		this.dealer = Dealer;
 		this.dealer.deal(this.dealer);
-		for (var i = 0; i < this.players.length; i++) {
-			this.dealer.deal(this.players[i]);
-			this.dealer.deal(this.players[i]);
-		};
+
+		this.players.forEach(function (player) {
+			this.dealer.deal(player);
+			this.dealer.deal(player);
+			this.getCardsValue(player);
+		}, this);
+		this.killPlayers();
+	},
+	getCardsValue: function (player) {
+		player.cards.forEach(function(card){
+			player.value += this.getCardValue(card);
+		}, this);
+	},
+	getCardValue:function (card) {
+		if(card.name<=10){
+			return card.name;
+		}else if(card.name==14){
+			return 11;
+		}else{
+			return 10;
+		}
+	},
+	killPlayers: function () {
+		this.players = 
+		this.players.filter(function(player){
+			return player.value <= 21;
+		});
+	},
+	askPlayer: function (player) {
+		var yes = confirm('Еще карту?');
+		if(yes){
+			var card = this.dealer.deal(player);
+			player.value += this.getCardValue(card);
+			if(player.value>21){
+				this.players.splice(this.players.indexOf(player), 1);
+				alert('ты лузер!');
+				return;
+			}else{
+				this.askPlayer(player);
+			}
+		}else{
+			alert('Ну и зря!');
+			return;
+		}
 	}
 }
 
@@ -51,27 +91,30 @@ var Game = {
  	игроку).*/
 var Dealer = {
 	deal: function (player) {
-		player.cards.push(Deck.deal());
+		var card = Deck.deal();
+		player.cards.push(card);
+		return card;
 	},
-	players: [],
-	cards: []
+	cards: [],
+	value: 0,
 };
 
-var Player = {
+var Vasia = {
 	name: "Vasia",
-	getCard: function(){
+	value: 0,
+	cards: []
+}
 
-	},
-	getCardsValue: function () {
-		// body...
-	},
+var Petia = {
+	name: "Petia",
+	value: 0,
 	cards: []
 }
 
 
 
-// Game.start();
-// console.log(Game.players);
+Game.start();
+console.log(Game.players);
 // console.log(Game.dealer);
 
 function fib (x) {
