@@ -7,5 +7,17 @@
 </head>
 <body>
 	OLOLO
+	<canvas id="myCanvas" width="900" height="500" style="border:1px solid #d3d3d3;">
+	Your browser does not support the HTML5 canvas tag.
+</canvas>
+<script type="text/javascript">
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
+	var img = document.createElement('img');
+	img.src = 'http://www.jfitz.com/cards/classic-playing-cards.png';
+	img.style.display = 'none';
+	document.body.appendChild(img);
+</script>
+
 </body>
 </html>

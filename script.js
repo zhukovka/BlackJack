@@ -8,7 +8,28 @@ function Deck () {
 		return _cards.splice(c1, 1)[0];
 	};
 }
+var cardMap = {
+	'spades':1,
+	'clubs':2,
+	'hearts':3,
+	'diamonds':4,
+	width: 73,
+	height: 98
+}
 
+var dealedCards = [];
+
+function cropCard(card) {
+	var pos = card.name;
+	if(pos == 14){
+		pos = 1;
+	}
+	var width = cardMap.width,
+	height = cardMap.height,
+	x1 = (pos-1)*width,
+  y1 = (cardMap[card.shape]-1)*height;
+	ctx.drawImage(img, x1, y1, width, height, (width)*(Game.dealedCards.length-1), 0, width, height);
+}
 Object.defineProperty(Deck.prototype, '_cards', {
 	get: function() {
 				var names = fillNames();
@@ -35,13 +56,14 @@ var Game = {
 	start: function(players) {
 		this.deck = new Deck();
 		this.definePlayers(players);
-		
+		this.dealedCards = [];
 		this.dealer = Dealer;
 		this.dealer.value = 0;
 		this.dealer.cards = [];
 		
 		console.log('this.dealer.value', Dealer.value)
-		this.dealer.deal(this.dealer, this.deck);
+		var card = this.dealer.deal(this.dealer, this.deck);
+		cropCard(card);
 		this.getCardsValue(this.dealer);
 
 		this.players.forEach(function (player, index, array) {
@@ -49,8 +71,8 @@ var Game = {
 			player.cards = [];
 			player.loser = false;
 
-			this.dealer.deal(player, this.deck);
-			this.dealer.deal(player, this.deck);
+			cropCard(this.dealer.deal(player, this.deck));
+			cropCard(this.dealer.deal(player, this.deck));
 			this.getCardsValue(player);
 			if(player.value == 21){
 				alert(player.name+', тебе повезло, чувак!')
@@ -186,6 +208,7 @@ var Dealer = {
 	deal: function (player, deck) {
 		var card = deck.deal();
 		player.cards.push(card);
+		Game.dealedCards.push(card);
 		return card;
 	},
 	cards: [],
@@ -223,9 +246,9 @@ function Player (name) {
 
 
 
-Game.start();
-console.log(Game.players);
-console.log(Game.dealer);
+// Game.start();
+// console.log(Game.players);
+// console.log(Game.dealer);
 
 function fib (x) {
 	var arr = [];
