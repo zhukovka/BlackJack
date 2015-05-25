@@ -3,20 +3,32 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Black Jack</title>
+	<link rel="stylesheet" href="style.css">
 	<script src="script.js"></script>
+	<script src="game.js"></script>
+	<script src="canvas.js"></script>
 </head>
 <body>
-	OLOLO
-	<canvas id="myCanvas" width="900" height="500" style="border:1px solid #d3d3d3;">
-	Your browser does not support the HTML5 canvas tag.
+	<div class="bj">BLACKJACK</div>
+	<div class="game">
+		<div class="start">
+			<form action="" class="player">
+				<input type="text" placeholder="enter your name" required autofocus>
+				<button>start game</button>
+			</form>
+		</div>
+		<canvas id="myCanvas" width="1200" height="667" style="border:1px solid #d3d3d3;">
+		Your browser does not support the HTML5 canvas tag.
+	</div>
 </canvas>
-<script type="text/javascript">
-	var c = document.getElementById("myCanvas");
-	var ctx = c.getContext("2d");
-	var img = document.createElement('img');
-	img.src = 'http://www.jfitz.com/cards/classic-playing-cards.png';
-	img.style.display = 'none';
-	document.body.appendChild(img);
+<script type="template" id="choise_dialog">
+	<div class="dialog">
+		<p>{{name}}, your value is {{value}}. Do you want to take another card?</p>
+		<div class="choise">
+			<input type="button" data-answer="no" value="No thanx">
+			<input type="button" data-answer="yes" value="Take card">
+		</div>
+	</div>
 </script>
 
 </body>

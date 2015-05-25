@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<!-- Created with Ai->Canvas Export Plug-In Version 1.2 (Mac)   -->
+<!-- By Mike Swanson (http://blog.mikeswanson.com/)             -->
+
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <title>BJ</title>
+  <script>
+
+    function init() {
+
+      var canvas = document.getElementById("canvas");
+      var ctx = canvas.getContext("2d");
+
+      draw(ctx);
+    }
+
+    function draw(ctx) {
+
+      // layer1/Image
+      ctx.save();
+      ctx.drawImage(document.getElementById("image1"), 0.0, 0.0);
+
+      // layer1/player5
+      ctx.beginPath();
+      ctx.moveTo(298.9, 503.9);
+      ctx.lineTo(267.6, 461.8);
+      ctx.lineTo(326.5, 418.0);
+      ctx.lineTo(357.8, 460.1);
+      ctx.lineTo(298.9, 503.9);
+      ctx.closePath();
+      ctx.stroke();
+
+      // layer1/player3
+      ctx.beginPath();
+      ctx.moveTo(446.4, 639.8);
+      ctx.lineTo(403.6, 609.6);
+      ctx.lineTo(445.8, 549.7);
+      ctx.lineTo(488.7, 579.9);
+      ctx.lineTo(446.4, 639.8);
+      ctx.closePath();
+      ctx.stroke();
+
+      // layer1/player1
+      ctx.beginPath();
+      ctx.moveTo(627.9, 722.7);
+      ctx.lineTo(578.2, 706.3);
+      ctx.lineTo(601.2, 636.6);
+      ctx.lineTo(651.0, 653.1);
+      ctx.lineTo(627.9, 722.7);
+      ctx.closePath();
+      ctx.stroke();
+
+      // layer1/player0
+      ctx.beginPath();
+      ctx.moveTo(826.5, 745.5);
+      ctx.lineTo(774.1, 745.0);
+      ctx.lineTo(774.8, 671.6);
+      ctx.lineTo(827.2, 672.2);
+      ctx.lineTo(826.5, 745.5);
+      ctx.closePath();
+      ctx.stroke();
+
+      // layer1/player2
+      ctx.beginPath();
+      ctx.moveTo(1022.0, 706.8);
+      ctx.lineTo(971.8, 722.1);
+      ctx.lineTo(950.4, 651.9);
+      ctx.lineTo(1000.6, 636.6);
+      ctx.lineTo(1022.0, 706.8);
+      ctx.closePath();
+      ctx.stroke();
+
+      // layer1/player4
+      ctx.beginPath();
+      ctx.moveTo(1197.8, 607.7);
+      ctx.lineTo(1155.8, 639.0);
+      ctx.lineTo(1112.0, 580.1);
+      ctx.lineTo(1154.1, 548.8);
+      ctx.lineTo(1197.8, 607.7);
+      ctx.closePath();
+      ctx.stroke();
+
+      // layer1/player6
+      ctx.beginPath();
+      ctx.moveTo(1333.3, 459.8);
+      ctx.lineTo(1303.1, 502.6);
+      ctx.lineTo(1243.1, 460.4);
+      ctx.lineTo(1273.4, 417.5);
+      ctx.lineTo(1333.3, 459.8);
+      ctx.closePath();
+      ctx.stroke();
+
+      // layer1/dealer0
+      ctx.beginPath();
+      ctx.moveTo(826.3, 414.2);
+      ctx.lineTo(773.8, 414.3);
+      ctx.lineTo(773.7, 340.9);
+      ctx.lineTo(826.2, 340.8);
+      ctx.lineTo(826.3, 414.2);
+      ctx.closePath();
+      ctx.stroke();
+
+      // layer1/dealer2
+      ctx.beginPath();
+      ctx.moveTo(934.7, 394.1);
+      ctx.lineTo(882.3, 394.2);
+      ctx.lineTo(882.1, 320.8);
+      ctx.lineTo(934.6, 320.7);
+      ctx.lineTo(934.7, 394.1);
+      ctx.closePath();
+      ctx.stroke();
+
+      // layer1/dealer1
+      ctx.beginPath();
+      ctx.moveTo(717.1, 394.1);
+      ctx.lineTo(664.6, 394.2);
+      ctx.lineTo(664.5, 320.8);
+      ctx.lineTo(717.0, 320.7);
+      ctx.lineTo(717.1, 394.1);
+      ctx.closePath();
+      ctx.stroke();
+      ctx.restore();
+    }
+  </script>
+ </head>
+ <body onload="init()">
+   <canvas id="canvas" width="1600" height="1027"></canvas>
+   <img alt="Image" id="image1" style="display: none" src="One-For-The-Money-new-felt1.png" />
+ </body>
+</html>

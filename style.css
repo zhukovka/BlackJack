@@ -1,0 +1,135 @@
+body, html{
+    height: 100%;
+}
+
+body{
+    margin: 0;
+    position: relative;
+    background: black;
+}
+
+.bj{
+    color: white;
+}
+
+.game{
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 1202px;
+    height: 669px;
+    margin: auto;
+    background: url(startGame.jpg) no-repeat;
+}
+.game.started{
+    background: #009050;
+}
+
+/*start*/
+    .start{
+        position: absolute;
+        width: 100%;
+        /*height: 100%;*/
+        /*background: rgba(255,255,255,.3);*/
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .start>.player>input{
+
+        display: block;
+        width: 50%;
+        height: 35px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        padding-left: 20px;
+        border-radius: 4px;
+        background: rgba(0,0,0,.3);
+        color: white;
+        font-size: 1em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .start>.player>input::-webkit-input-placeholder {
+        color:#c0392b;
+        text-transform: uppercase;
+        font-size: 1em;
+    }
+    .start>.player>input::-moz-placeholder          {
+        color:#c0392b;
+        text-transform: uppercase;
+        font-size: 1em;
+        }/* Firefox 19+ */
+    .start>.player>input:-moz-placeholder           {
+        color:#c0392b;
+        text-transform: uppercase;
+        font-size: 1em;
+        }/* Firefox 18- */
+    .start>.player>input:-ms-input-placeholder      {
+        color:#c0392b;
+        text-transform: uppercase;
+        font-size: 1em;
+    }
+
+    .start>.player>button{
+        /*width: 50%;*/
+        /*height: 35px;*/
+        display: block;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 1em;
+        color: #eee;
+        text-transform: uppercase;
+        border: 1px solid #076636;
+        background: #066d39;
+        padding: 15px 35px;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+        box-shadow: 0px 0px 2px #333;
+        font-weight: bold;
+    }
+
+    .start>.player>button:hover{
+        color: white;
+        background: #076636;
+    }
+
+/*dialog*/
+    .dialog{
+        width: 50%;
+        margin: auto;
+        text-align: center;
+        color: white;
+        font-size: 1.5em;
+        font-family: Helvetica, sans-serif;
+        border-radius: 4px;
+        background: black;
+        padding: 30px;
+    }
+    .dialog input{
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 1em;
+        color: #eee;
+        text-transform: uppercase;
+        padding: 15px 35px;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+        box-shadow: 0px 0px 2px #333;
+        font-weight: bold;
+    }
+
+    .dialog .choise input:first-child{
+        border: 1px solid #c0392b;
+        background: #c0392b;
+        margin-right: 10px;
+    }
+    .dialog .choise input:last-child{
+        border: 1px solid #076636;
+        background: #066d39;
+    }
